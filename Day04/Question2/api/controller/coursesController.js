@@ -15,10 +15,12 @@ module.exports.courseGetOne = function(req, res){
     const stdId = req.params.stdId;
     const courseId = req.params.courseId;
     console.log("hre");
-    Student.findById(stdId).select("courses").exec(function(err,courses){
-      // const Courses = std.courses.findById(courseId);
-      console.log("course found: ", courses.courses[2])
-      res.status(200).json(courses.courses);
+    Student.findById(stdId).select("courses").exec(function(err,c){
+      if(c.courses.id==courseId)
+      res.status(200).json(c.courses);
+      else
+      res.status(200).send("course not found");
+
     })
 }
 
