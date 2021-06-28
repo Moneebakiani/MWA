@@ -1,0 +1,2 @@
+{"_id":{"$oid":"60d8ecdb402c8a47640bb1da"},"name":"Mona Lisa","createdYear":1517,"artist":"Leonardo Da Vinci","reviews":[{"_id":{"$oid":"60d91f255927c43eecf5ba50"},"name":"Review1","review":"good","createdOn":{"$date":"2021-06-27T05:00:00Z"}}],"__v":39}
+{"_id":{"$oid":"60d8ed0b402c8a47640bb1dc"},"name":"Girl with a Pearl Earring","createdYear":1665,"artist":"Johannes Vermeer","reviews":[],"__v":0}
