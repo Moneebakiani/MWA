@@ -199,23 +199,20 @@ module.exports.reviewPartialUpdate = function (req, res) {
 }
 
 module.exports.deleteReview = function (req, res) {
+    const response = {
+        status: 200,
+        message: res
+    }
 
-    const paintingId = req.params.paintingId
-    const reviewId = req.params.reviewId;
+    const { paintingId, reviewId } = req.params;
 
     Painting.findById(paintingId).exec(function (err, painting) {
-        const response = {
-            status: 200,
-            message: painting
-        }
 
         if (err) {
-            //res.status(500).message(err);
             response.status = 500;
             response.message = err;
         }
         else if (!painting) {
-            //res.status(404).json({ "message": "Game Id not found" });
             response.status = 404;
             response.message = { "message": "Painting Id not found" };
         }
@@ -226,60 +223,21 @@ module.exports.deleteReview = function (req, res) {
             review.remove();
             painting.save(function (err, updatedpainting) {
                 if (err) {
-                    //res.status(500).json(err);
                     response.status = 500;
                     response.message = err;
                 } else {
-                    //res.status(202).json(updatedpainting.reviews);
                     response.status = 202;
                     response.message = updatedpainting.reviews;
                     console.log(`INNER response: ${JSON.stringify(response)}`);
                 }
-                // res.status(response.status).json(response.message);
+                res.status(response.status).json(response.message);
             });
-
         }
-        console.log(`\n===\nOUTER RESPONSE: ${JSON.stringify(response)}`);
-        res.status(response.status).json(response.message);
+
+        else {
+            res.status(response.status).json(response.message);
+        }
     });
 
 }
 
-// module.exports.deleteReview = function (req, res) {
-
-
-//     const paintingId = req.params.paintingId
-//     const reviewId = req.params.reviewId;
-
-//     Painting.findById(paintingId).exec(function (err, painting) {
-
-//         if (err) {
-//             res.status(500).message(err);
-
-//         }
-//         else if (!painting) {
-//             res.status(404).json({ "message": "Game Id not found" });
-
-//         }
-//         if (painting) {
-//             console.log(`paiting.reviews: ${painting.reviews}`);
-//             const review = painting.reviews.id(reviewId);
-//             console.log("reviewwww", review);
-//             review.remove();
-//             painting.save(function (err, updatedpainting) {
-//                 if (err) {
-//                     res.status(500).json(err);
-
-//                 } else {
-//                     res.status(202).json(updatedpainting.reviews);
-
-//                 }
-
-//             });
-
-
-//         }
-
-//     });
-
-// }
