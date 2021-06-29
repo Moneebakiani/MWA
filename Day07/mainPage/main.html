@@ -1,0 +1,19 @@
+<H1> This is home page</H1>
+
+
+
+<ul>
+    <li ng-repeat="game in MyCtrl.games | limitTo:3">
+        internalName: {{game.internalName}}<br>
+        title: {{game.title}}<br>
+        metacriticLink: {{game.metacriticLink}}<br>
+        dealID: {{game.dealID}}<br>
+        storeID: {{game.storeID}}<br>
+        gameID: {{game.gameID}}<br>
+        salePrice: {{game.salePrice}}<br>
+        normalPrice: {{game.normalPrice}}<br>
+        isOnSale: {{game.isOnSale}}<br>
+        savings:{{game.savings}}<br>
+
+    </li>
+</ul>
