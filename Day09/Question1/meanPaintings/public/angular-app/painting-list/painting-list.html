@@ -1,0 +1,18 @@
+<h1>Mean Paintings</h1>
+<b>Search:</b> <input type="text" ng-model="searchText">
+<ul>
+    <li ng-repeat="painting in vm.paintings | filter:searchText">
+        <a ng-href="#!/paintings/{{painting._id}}">{{painting.name}}</a>
+    </li>
+</ul>
+
+<form name="vm.paintingForm" ng-submit="vm.addPainting()">
+    <h3>Add new Painting:</h3>
+    To add a new Painting please fill in the fields:<br><br>
+    Name: <input type="text" name="name" ng-model="vm.newPaintName" style="color: black;"></br>
+    CreatedYear: <input type="text" name="createdYear" required ng-model="vm.newCreatedYear" style="color: black;"></br>
+
+    Artist: <input type="text" name="artist" ng-model="vm.newArtist" style="color: black;"></br>
+
+    <button type="submit" style="background-color: green; color: #fff;">Add Painting</button></br>
+</form>
