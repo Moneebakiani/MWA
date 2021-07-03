@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanJobss">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="css/custome.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>JobSearch</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MeanJobs</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#!/jobs">Jobs</a></li>
+
+            </ul>
+            <form class="navbar-form navbar-left" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="SearchText" placeholder="Search"
+                        name="searchText">
+                    <!-- <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div ng-view></div>
+
+</body>
+
+<script src="../node_modules/angular/angular.min.js"></script>
+<script src="../node_modules/angular-route/angular-route.min.js"></script>
+<script src="angular-app/app.js"></script>
+<script src="angular-app/data-factory/jobs-data-factory.js"></script>
+<script src="angular-app/job-list/job-list-controller.js"></script>
+<script src="angular-app/displayOneJob/dispplay-one-job.js"></script>
+
+
+<!-- <footer class="footer">
+    <div class="container">
+        <p class="text-muted text-center">
+
+            <small class="text-black-50 text-center">
+                &copy;2021 Maharishi International
+                University. All Rights Reserved.
+            </small>
+        </p>
+    </div>
+</footer> -->
+
+</html>
