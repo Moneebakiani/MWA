@@ -1,0 +1,17 @@
+<h2>Information about Painting: {{vm.paint.name}}</h2>
+<p><b>createdYear</b>: {{vm.paint.createdYear}}<br>
+    <b>artist: </b>{{vm.paint.artist}}<br>
+    <b>reviews: </b>
+<div ng-repeat="review in vm.paint.reviews">
+    <ul>
+        <li>
+            <b>name:</b> {{review.name}}<br>
+            <b>review :</b> {{review.review}}
+        </li>
+    </ul>
+
+</div>
+<button ng-show={{vm.isLoggedIn()}} style="background-color: red; color: #fff;"
+    ng-click="vm.DeletePainting()">Delete</button>
+<br>
+</p>
