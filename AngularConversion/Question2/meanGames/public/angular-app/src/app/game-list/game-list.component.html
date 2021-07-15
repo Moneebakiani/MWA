@@ -1,0 +1,8 @@
+<li *ngFor="let game of games">
+    <a routerLink="/game/{{game._id}}">{{game.title}}<br></a>
+    <!-- Price:{{game.price | currency}}<br>
+    Year:{{game.year}}<br> -->
+
+</li>
+<br>
+<app-add-game-form></app-add-game-form>

@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Register: </h1>
+    <div *ngIf="message" class="alert alert-success" role="alert">
+        <P>{{message}}</P>
+    </div>
+    <div *ngIf="err" class="alert alert-danger" role="alert">
+        {{err}}
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+        <DIV class="form-group">
+            <label for="username">Username</label>
+            <input type="username" id="username" formControlName="username" class="form-control" placeholder="Username"
+                autocapitalize="none" />
+        </DIV>
+        <DIV class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password"
+                autocapitalize="none" />
+        </DIV>
+        <DIV class="form-group">
+            <label for="password-repeat">Repeat Password</label>
+            <input type="password" class="form-control" id="passwordrepeat" formControlName="passwordrepeat"
+                placeholder="Password" autocapitalize="none" />
+        </DIV>
+        <BUTTON type="submit" class="btn btn-success">Register</BUTTON>
+    </form>
+</div>

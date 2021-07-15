@@ -1,0 +1,14 @@
+<h3>
+    Information about Game:<p>{{game.title}}
+        <!-- <game-rating starts={{vm.game.rate}}></game-rating> -->
+    </p>
+</h3>
+<p>Price:{{game.price | currency}}<br>
+    year:{{game.year}}<br>
+    designers:{{game.designers}}<br>
+    MinimumPlayers:{{game.minPlayers}}<br>
+    MaxPlayers:{{game.maxPlayers}}<br>
+
+
+</p>
+<button class="btn btn-danger" (click)="deleteGame()">Delete</button>

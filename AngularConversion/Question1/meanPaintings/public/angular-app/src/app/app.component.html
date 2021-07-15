@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-fixed-top bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+        aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">MeanPaintings</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li ng-class="vm.isActiveTab('')" class="active"><a routerLink="/">Home</a></li>
+        <li ng-class="vm.isActiveTab('paintings')"><a routerLink="paintings">Paintings</a></li>
+        <li ng-class="vm.isActiveTab('register')"><a routerLink="register">Register</a>
+        <li ng-class="vm.isActiveTab('profile')"><a routerLink="profile">Profile</a></li>
+
+
+      </ul>
+      <div class="col-xs-6">
+        <form class="navbar-form navbar-right" role="login">
+          <div class="form-group margin-right">
+            <input type="text" class="form-control" placeholder="Username" autocapitalize="none">
+          </div>
+          <div class="form-group margin-right">
+            <input type="password" class="form-control" placeholder="Password" autocapitalize="none">
+          </div>
+          <button type="submit" class="btn btn-sm btn-success margin-right">Login</button>
+        </form>
+      </div>
+      <!-- <ul *ngIf="isLoggedIn()" class="new navbar-nav navbar-right">
+              <li>
+                  <p class="navbar-text">Welcome {{loggedinUser}}</p>
+              </li>
+              <li><button class="navbar-btn btn-sm btn-info" (click)="logout()">Logout</button></li>
+          </ul> -->
+    </div>
+  </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>

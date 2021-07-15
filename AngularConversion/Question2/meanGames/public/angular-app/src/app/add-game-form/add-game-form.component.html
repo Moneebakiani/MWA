@@ -1,0 +1,63 @@
+<!-- <div>
+    <form [formGroup]="addForm">
+        To add a new game please fill in the fields:<br>
+        Title: <input type="text" ngModel name="title" #title="ngModel" required style="color: black;"><br>
+        Price: <input type="text" ngModel name="price" #price="ngModel" id="price" required style="color: black;"><br>
+        Year: <input type="text" ngModel name="year" #year="ngModel" style="color: black;"><br>
+        Rating: <input type="text" ngModel name="rating" #rating="ngModel" style="color: black;"><br>
+        MinAge: <input type="text" ngModel name="minAge" #minAge="ngModel" required style="color: black;"
+            ng-pattern="/^[1-9][0,9]{0,1}$"><br>
+        MinPlayers: <input type="text" ngModel name="minPlayers" #minPlayers="ngModel" required style="color: black;"
+            ng-pattern="/^[1-9][0,9]{0,1}$"><br>
+         <span *ng-If="gameForm.minPlayers.$invalid && gameForm.minPlayers.$dirty">Min players atleast 1 and nor
+            more
+            than 99</span> 
+        MaxPlayers: <input type="text" ngModel name="maxPlayers" #maxPlayers="ngModel" required style="color: black;"
+            ng-pattern="/^[1-9][0,9]{0,1}$"><br>
+         <span ng-show="gameForm.maxPlayers.$invalid && gameForm.maxPlayers.$dirty">Min players not more than 99
+        </span> 
+        <button type="submit" class="btn-success">Add Game</button><br>
+    </form>
+</div>  -->
+
+
+<form [formGroup]="addForm" (ngSubmit)="addGame()">
+
+    <label for="title">
+        <h4>Title:</h4>
+    </label>
+    <input id="title" type="text" formControlName="title" required><br>
+
+    <label for="price">
+        <h4>Price:</h4>
+    </label>
+    <input id="price" type="text" formControlName="price" required><br>
+
+    <label for="year">
+        <h4>Year:</h4>
+    </label>
+    <input id="year" type="text" formControlName="year" required><br>
+
+    <label for="rating">
+        <h4>Rating:</h4>
+    </label>
+    <input id="rate" type="text" formControlName="rate" required><br>
+
+    <label for="minAge">
+        <h4>MinAge:</h4>
+    </label>
+    <input id="minAge" type="text" formControlName="minAge"><br>
+
+    <label for="minPlayers">
+        <h4>MinPlayers:</h4>
+    </label>
+    <input id="minPlayers" type="text" ngModel formControlName="minPlayers" pattern="/^[1-9][0,9]{0,1}$"><br>
+
+    <label for="maxPlayers">
+        <h4>MaxPlayers:</h4>
+    </label>
+    <input id="maxPlayers" type="text" formControlName="maxPlayers"><br>
+
+    <button type="submit" class="btn-success">Add Game</button><br>
+
+</form>

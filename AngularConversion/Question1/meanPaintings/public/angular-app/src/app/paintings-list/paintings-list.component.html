@@ -1,0 +1,6 @@
+<div class="container">
+    <li *ngFor="let painting of paintings">
+        <a routerLink="/paintings/{{painting._id}}">{{painting.name}}<br></a>
+    </li><br>
+    <app-add-painting-form></app-add-painting-form>
+</div>
