@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>
+        Information about Game:<p>{{vm.game.title}}
+            <game-rating starts={{vm.game.rate}}></game-rating>
+        </p>
+    </h1>
+    <img ng-src="{{vm.game.images[vm.game.images.length - 1]}}" class="img-fluid img-thumbnail" width="200" height="200"
+        alt="game image">
+    <div ng-show={{vm.isLoggedIn()}}>
+        <form class="form-horizontal" name="vm.updateForm" ng-submit="vm.updateImage()" encType="multipart/form-data">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="file" id="image" name="image" file-model="vm.myFile" accept="image/*">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success">Update Image</button>
+
+        </form>
+    </div>
+
+    <p>Price:{{vm.game.price | currency}}<br>
+        year:{{vm.game.year}}<br>
+        designers:{{vm.game.designers}}<br>
+        MinimumPlayers:{{vm.game.minPlayers}}<br>
+        MaxPlayers:{{vm.game.maxPlayers}}<br>
+
+    </p>
+
+    <button ng-show={{vm.isLoggedIn()}} class="btn btn-danger" ng-click="vm.DeleteGame()">Delete</button>
+
+</div>
